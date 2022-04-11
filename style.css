@@ -1,0 +1,57 @@
+body {
+  background-image: url(photo/instruments.jpg);
+
+background-size: cover;
+
+  background-position: 0, 0;
+  text-align: center;
+  background-repeat: no-repeat;
+
+}
+
+
+
+h1, h2, h3, h4, p, hr {
+  color: black;
+  font-family: 'Lobster', cursive;
+}
+
+.explanation_text {
+  padding-left: 15%;
+  padding-right: 15%
+}
+
+.title_header {
+  text-align: center;
+  padding: 5%;
+}
+
+.title_text{
+  font-weight: bold;
+  font-size: 4rem;
+  font-family: 'Lobster', cursive;
+}
+
+.the_one_true_savior {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.lets-fuckin-goooooo{
+  margin: 8% 0;
+}
+
+
+
+.post-title{
+  padding: 8% 0;
+}
+
+.prediction-button{
+  margin: 5% 0;
+}
+
+.welcome {
+  padding: 8% 0;
+}
