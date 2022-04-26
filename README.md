@@ -6,7 +6,7 @@ To-Do list
 
 1. Refinement of 'Jethro fact'
   i. Use array to store and then random number asign a 'fact'.
-  ii. Increase number of 'facts'. 
+  ii. Increase number of 'facts'. - DONE - Awaiting next version. 
 2. Better adaption of browser for desktop and mobile.
   i. Better use of bootstrap
 3. API compatiblity to provide a general or 'fun fact'.
