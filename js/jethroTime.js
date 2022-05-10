@@ -73,6 +73,10 @@ function thetimeinjethrotime(){
   if (hour === 0){
     hour = "00"
   }
+  else if (hour >= 1 && hour < 10){
+      var n_hour = hour
+      min = "0" + n_min
+    }
   if (min >= 60) {
     min = min % 60
     var new_hour = hour
