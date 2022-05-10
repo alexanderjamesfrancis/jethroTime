@@ -1,0 +1,86 @@
+body {
+  background-image: url(photo/instruments.jpg);
+  background-repeat:no-repeat;
+background-size:cover;
+background-position:center;
+
+}
+
+
+
+h1, h2, h3, h4, p, hr {
+  color: black;
+  font-family: 'Lobster', cursive;
+}
+
+
+
+.carousel_image_main{
+  max-width: 50%;
+  height: auto;
+}
+
+
+
+.explanation_text {
+  padding-left: 15%;
+  padding-right: 15%
+}
+
+
+.footer {
+  bottom: 0%;
+  margin: 50px 0 0 0;
+  height: 70px;
+  width: 100%;
+  background-color: whitesmoke;
+  text-align: center;
+}
+
+.jethro-carousel{
+  text-align: center;
+  justify-content: center;
+}
+
+.jethroimage{
+  max-width: 30%;
+  max-height: 30%;
+  margin:  auto;
+  width: 100%
+}
+
+.title_header {
+  text-align: center;
+  padding: 2%;
+  margin-bottom: 30%
+}
+
+.title_text{
+  font-weight: bold;
+  font-size: 4rem;
+  font-family: 'Lobster', cursive;
+}
+
+.the_one_true_savior {
+  height: auto;
+
+}
+
+
+.lets-fuckin-goooooo{
+  margin: 8% 0;
+}
+
+
+
+.post-title{
+  padding: 8% 0;
+}
+
+.prediction-button{
+  margin: 5% 0;
+}
+
+.welcome {
+  padding: 2% 0;
+}
