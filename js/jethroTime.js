@@ -65,30 +65,29 @@ function random_fact(){
 var timeControl = document.querySelector('input[type="time"]');
 timeControl.value = '00:00';
 
-function thetimeinjethrotime(){
+function thetimeinjethrotime() {
   var eta = document.getElementById('eta').value;
   var random_addition = randomNumber()
-  var hour = parseInt(eta.slice(0,2))
-  var min = parseInt(eta.slice(3,5)) + random_addition
-  if (hour === 0){
-    hour = "00"
-  }
-  else if (hour >= 1 && hour < 10){
-    var n_hour = hour
-    hour = "0" + n_hour
-    }
+  var hour = parseInt(eta.slice(0, 2))
+  var min = parseInt(eta.slice(3, 5)) + random_addition
   if (min >= 60) {
     min = min % 60
     var new_hour = hour
     hour = new_hour + 1
   }
-  else if (min === 0){
-      min = "00"
-    }
-  else if (min >= 1 && min < 10){
-      var n_min = min
-      min = "0" + n_min
-    }
+  if (min === 0) {
+    min = "00"
+  }
+  if (min >= 1 && min < 10) {
+    var n_min = min
+    min = "0" + n_min
+  }
+  if (hour === 0) {
+    hour = "00"
+  } else if (hour >= 1 && hour < 10) {
+    var n_hour = hour
+    hour = "0" + n_hour
+  }
 
 
   var new_time = hour + ":" + min
