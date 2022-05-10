@@ -9,7 +9,7 @@ To-Do list
   ii. Increase number of 'facts'. - DONE - Awaiting next version. 
 2. Better adaption of browser for desktop and mobile.
   i. Better use of bootstrap
-  DONE - Didn't need tons of Bootstrap.
+  In progress
 3. API compatiblity to provide a general or 'fun fact'.
   i. Need to learn API intergration for HTML first. - rejected - will detract from the website itself. 
 4. Amend placeholders and proof-read. - In progress
