@@ -1,3 +1,9 @@
+"use strict";
+
+const response_window = document.getElementById("response-box");
+const jethroAnswer = document.getElementById("text-response");
+const jethroTimeBtn = document.getElementById("jethro-time-btn");
+const exitWindow = document.getElementById("exit");
 
 var jethroFacts = [
   "Jethro has found a dead bird on the way and must take a photograph. ",
@@ -34,68 +40,89 @@ var jethroFacts = [
   "Jethro is debating the majesty of cinematorgraphy that is, Troll 2. ",
   "Jethro is trying to hack this website. ",
   "Jethro is riding a capybara called Balthasar into battle. ",
-  "Jethro is playing DnD as 'The' Bard. "
+  "Jethro is playing DnD as 'The' Bard. ",
 ];
 
-
-function current_time(){
+function current_time() {
   var d = new Date();
   var time = d.toLocaleTimeString();
   return time;
+}
 
-};
+var now_time = (document.getElementsByClassName("gmt_time")[0].innerHTML =
+  current_time());
 
-
-var now_time = document.getElementsByClassName("gmt_time")[0].innerHTML = current_time();
-
-function its_Jethro_Time(){
-  var hour = docu
+function its_Jethro_Time() {
+  var hour = docu;
 }
 
 function randomNumber() {
-  number  = Math.floor(Math.random() * 59)
-  return number
-};
+  let number = Math.floor(Math.random() * 240) + 1;
+  return number;
+}
 
-function random_fact(){
-  number  = Math.floor(Math.random() * (jethroFacts.length))
-  return number
+function random_fact() {
+  let number = Math.floor(Math.random() * jethroFacts.length);
+  return number;
 }
 
 var timeControl = document.querySelector('input[type="time"]');
-timeControl.value = '00:00';
+timeControl.value = "00:00";
 
 function thetimeinjethrotime() {
-  var eta = document.getElementById('eta').value;
-  var random_addition = randomNumber()
-  var hour = parseInt(eta.slice(0, 2))
-  var min = parseInt(eta.slice(3, 5)) + random_addition
+  //To do:
+  //Work on getting the timer to account for up to 4h and display the correct time in hours and mins.
+  // How to:
+  //1.Make timerr produce random number from 1-240 (covers 4 hours in mins) - done
+  //2. Break this number in mins and hours
+  //3. Rebuild to produce iterable time in jethro time.
+  // Breaks the time down into it parts and rebuilds at the end to form a new eta for Jethro
+  const eta = document.getElementById("eta").value;
+  let random_addition = randomNumber();
+  let min = parseInt(eta.slice(3, 5)) + random_addition;
+  let hour = parseInt(eta.slice(0, 2));
+  let new_min;
+  let new_hour
+  console.log(random_addition);
   if (min >= 60) {
-    min = min % 60
-    var new_hour = hour
-    hour = new_hour + 1
+    new_min = min % 60;
+    if (new_min >= 1 && new_min < 10){
+      new_min = "0" + new_min;
+    } else if(min === 0){
+      new_min = "00";
+    }
+    let add_hour = Math.trunc((min / 60));
+    new_hour = hour += add_hour;
+  } else if (min === 0){
+    new_min = "00";
+  } else if (min >= 1 && min < 10){
+    new_min = "0" + min;
+  } else {
+    new_min = min
   }
-  if (min === 0) {
-    min = "00"
-  }
-  if (min >= 1 && min < 10) {
-    var n_min = min
-    min = "0" + n_min
-  }
+
   if (hour === 0) {
-    hour = "00"
+    new_hour = "00";
   } else if (hour >= 1 && hour < 10) {
-    var n_hour = hour
-    hour = "0" + n_hour
+    let n_hour = new_hour;
+    new_hour = "0" + n_hour;
+  } else if (hour >= 24){
+    new_hour = hour % 24
+    if (new_hour === 0){
+      new_hour = "00";
+    } 
   }
 
+  let new_time = new_hour + ":" + new_min;
+  jethroAnswer.textContent =
+    jethroFacts[random_fact()] + "His expected arrival is " + new_time;
+  response_window.classList.remove("hidden");
 
-  var new_time = hour + ":" + min
-  alert(jethroFacts[random_fact()] + "His expected arrival is " + new_time)
-  /// Use modulo to get the mins left and then up it by an hour///
-  ///alert(min)///
-
-
+  // Bug note - 24h overflow does not work properly. report 'undefined' for the hour
 }
 
-$('#jethroCarousel').carousel()
+exitWindow.addEventListener("click", function () {
+  response_window.classList.add("hidden");
+});
+
+jethroTimeBtn.addEventListener("click", thetimeinjethrotime);
