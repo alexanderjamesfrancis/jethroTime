@@ -85,9 +85,10 @@ h1, h2, h3, h4, p, hr {
   padding: 2% 0;
 }
 
+
 .window{
   position: absolute;
-  
+  display: flex;
   top: 50%;
   bottom: 25%;
   left: 50%;
@@ -99,6 +100,21 @@ h1, h2, h3, h4, p, hr {
   border-radius: 5px;
   box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
   z-index: 10;
+  
+}
+
+.jethro-title{
+  margin: auto
+
+}
+
+.response-header{
+  position:absolute;
+  top: 10%;
+}
+
+.response{
+  font-size: 2rem
 }
 
 .exit-window{
@@ -114,4 +130,8 @@ h1, h2, h3, h4, p, hr {
 
 .hidden{
   display:none;
+}
+
+.response-box{
+  box-shadow: 5px 10px 8px red;
 }
