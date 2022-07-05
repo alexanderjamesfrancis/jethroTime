@@ -82,7 +82,7 @@ function thetimeinjethrotime() {
   let min = parseInt(eta.slice(3, 5)) + random_addition;
   let hour = parseInt(eta.slice(0, 2));
   let new_min;
-  let new_hour
+  let new_hour = 0;
   console.log(random_addition);
   if (min >= 60) {
     new_min = min % 60;
@@ -119,6 +119,7 @@ function thetimeinjethrotime() {
   response_window.classList.remove("hidden");
 
   // Bug note - 24h overflow does not work properly. report 'undefined' for the hour
+  //new bug 05/07 - hour comes up as undefined - all cases have been single digit values. 
 }
 
 exitWindow.addEventListener("click", function () {
